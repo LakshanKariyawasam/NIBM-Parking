@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Lakshan-028
 //
-//  Created by Mobios on 11/15/21.
+//  Created by on 11/15/21.
 //
 
 import SwiftUI
@@ -26,10 +26,7 @@ struct ContentView: View {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
-        
         }
-        
-        
     }
 }
 
