@@ -10,6 +10,7 @@
 		092A24C42744AC96008DA14D /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A24C32744AC96008DA14D /* FirebaseController.swift */; };
 		092A24CA2744FAC1008DA14D /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 092A24C92744FAC1008DA14D /* CodeScanner */; };
 		092A24CF27451D4A008DA14D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A24CE27451D4A008DA14D /* LoginView.swift */; };
+		092FF30C2746590E00C725E9 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FF30B2746590E00C725E9 /* RegisterView.swift */; };
 		09362DA827423E710029E047 /* Lakshan_028App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09362DA727423E710029E047 /* Lakshan_028App.swift */; };
 		09362DAA27423E710029E047 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09362DA927423E710029E047 /* ContentView.swift */; };
 		09362DAC27423E8F0029E047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09362DAB27423E8F0029E047 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		092A24C32744AC96008DA14D /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		092A24CE27451D4A008DA14D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		092FF30B2746590E00C725E9 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		09362DA427423E710029E047 /* Lakshan-028.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lakshan-028.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09362DA727423E710029E047 /* Lakshan_028App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lakshan_028App.swift; sourceTree = "<group>"; };
 		09362DA927423E710029E047 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				094990492743BD7F0088690B /* SlotGridView.swift */,
 				092A24C32744AC96008DA14D /* FirebaseController.swift */,
 				092A24CE27451D4A008DA14D /* LoginView.swift */,
+				092FF30B2746590E00C725E9 /* RegisterView.swift */,
 			);
 			path = "Lakshan-028";
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092FF30C2746590E00C725E9 /* RegisterView.swift in Sources */,
 				092A24C42744AC96008DA14D /* FirebaseController.swift in Sources */,
 				0949904A2743BD7F0088690B /* SlotGridView.swift in Sources */,
 				0949903B2743A1980088690B /* SettingsView.swift in Sources */,

@@ -38,7 +38,11 @@ struct ContentView: View {
                                 Text("Login")
                         }
                 }else if(setting.viewName=="Register"){
-                    
+                    RegisterView(setting: setting)
+                            .tabItem {
+                                Image(systemName: "person")
+                                Text("Register")
+                            }
                     
                 }else if(setting.viewName=="Password"){
                     
