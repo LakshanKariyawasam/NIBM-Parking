@@ -51,7 +51,7 @@ struct BookingView: View {
                 }
                 
             }.shadow(radius: 10 )
-            .padding(.bottom, 20.0).foregroundColor(.black).background(Color(hue: 0.547, saturation: 0.34, brightness: 0.969))
+            .padding(.bottom, 20.0).foregroundColor(.black).background(Color(hue: 0.547, saturation: 0.34, brightness: 0.969)).cornerRadius(/*@START_MENU_TOKEN@*/8.0/*@END_MENU_TOKEN@*/)
             
             
             VStack{

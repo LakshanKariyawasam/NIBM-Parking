@@ -25,7 +25,7 @@ struct ContentView: View {
                             Image(systemName: "book")
                             Text("Booking")
                     }
-                SettingsView(setting: setting).tabItem {
+                SettingsView().tabItem {
                         Image(systemName: "gear")
                         Text("Settings")
                     }
@@ -46,7 +46,11 @@ struct ContentView: View {
                     
                 }else if(setting.viewName=="Password"){
                     
-                    
+                    ForgetPasswordView(setting: setting)
+                            .tabItem {
+                                Image(systemName: "person")
+                                Text("Password Reset")
+                            }
                 }
             }
         }

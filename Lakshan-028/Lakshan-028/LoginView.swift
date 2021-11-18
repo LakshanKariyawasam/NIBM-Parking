@@ -46,7 +46,7 @@ struct LoginView: View {
             Spacer()
             
             Button(action:{
-                
+                setting.viewName = "Password"
             }, label:{
                 Text("Forget Password").fontWeight(.semibold).padding()
             })

@@ -91,5 +91,22 @@ class FirebaseController{
             }
         }
     }
+    
+    func forgetPassword(email: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if let error = error, let _ = AuthErrorCode(rawValue: error._code) {
+                completionBlock(false)
+            } else {
+                completionBlock(true)
+            }
+        }
+    }
+    
+    func logOut(){
+        try! Auth.auth().signOut();
+    }
+    
+    
 
 }
