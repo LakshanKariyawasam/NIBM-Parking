@@ -9,11 +9,13 @@ import SwiftUI
 import CodeScanner
 
 struct BookingView: View {
+    
     @State var isPresentingScanner = false;
     @State var qrCode: String = "";
     @State var avaSolts: [String] = [];
     @State private var avaSoltsIndex = 1;
     @State var isLoggedIn = false;
+    @ObservedObject var setting : AppSettings
     
     var scannerSheet : some View{
         CodeScannerView(
@@ -23,13 +25,13 @@ struct BookingView: View {
                     self.qrCode = code;
                     self.isPresentingScanner = false
                 }
-            
             }
         )
     }
-    
+  
     
     var body: some View {
+        
         VStack{
             HStack( spacing: 100){
                 VStack(alignment: .leading){
@@ -68,7 +70,6 @@ struct BookingView: View {
                     Button("Scan QR"){
                         self.isPresentingScanner = true;
                     }.padding(5)
-                    
                 }
                 
             }
@@ -93,14 +94,19 @@ struct BookingView: View {
             .sheet(isPresented: $isPresentingScanner) {
                 self.scannerSheet
             }
-        }
-        .padding(20.0).onAppear {
+            
+            
+        }.padding(20.0).onAppear {
            // if(!isLoaded){
-                self.loadData();
+            self.getUserData()
+            self.loadData();
                 //self.isLoaded = true;
             //}
         
+        
         }
+            
+        
     }
     
     func loadData(){
@@ -111,23 +117,28 @@ struct BookingView: View {
             print(success)
         }
         
+        
+    }
+    
+    func getUserData(){
+        let controller = FirebaseController()
         controller.getUser() {(success) -> Void in
            let regId = success["regid"] as! Int64;
             if(regId==0){
                 print("not login")
-                self.isLoggedIn = false;
+                setting.isLoggedIn = false
                 
             }else{
-                self.isLoggedIn = true;
+                setting.isLoggedIn = true
             }
             
         }
     }
 }
 
-struct BookingView_Previews: PreviewProvider {
-    static var previews: some View {
-        BookingView()
-            .preferredColorScheme(.light)
-    }
-}
+//struct BookingView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BookingView(, setting: AppSettings)
+//            .preferredColorScheme(.light)
+//    }
+//}
