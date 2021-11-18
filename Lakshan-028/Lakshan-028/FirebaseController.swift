@@ -58,5 +58,38 @@ class FirebaseController{
             completionBlock(userObj);
         })
     }
+    
+    
+    func createUser(email: String, password: String,name:String,vehno:String,nic:String, completionBlock: @escaping (_ success: Bool) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
+            if let user = authResult?.user {
+                print(user)
+                let id=Int64((Date().timeIntervalSince1970 * 1000.0).rounded())
+                let userData = ["regid":id,
+                                "name":name,
+                                "vehicleNo":vehno,
+                                "nic":nic] as [String : Any]
+                
+                var ref: DatabaseReference!
+
+                ref = Database.database().reference()
+                
+                ref.child("users").child(user.uid).setValue(userData)
+                completionBlock(true)
+            } else {
+                completionBlock(false)
+            }
+        }
+    }
+    
+    func signIn(email: String, pass: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: pass) { (result, error) in
+            if let error = error, let _ = AuthErrorCode(rawValue: error._code) {
+                completionBlock(false)
+            } else {
+                completionBlock(true)
+            }
+        }
+    }
 
 }

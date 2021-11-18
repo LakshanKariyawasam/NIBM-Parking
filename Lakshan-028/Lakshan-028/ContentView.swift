@@ -30,11 +30,20 @@ struct ContentView: View {
                         Text("Settings")
                     }
             }else{
-                LoginView(setting: setting)
-                        .tabItem {
-                            Image(systemName: "person")
-                            Text("Login")
-                    }
+                if(setting.viewName=="Login"){
+                    
+                    LoginView(setting: setting)
+                            .tabItem {
+                                Image(systemName: "person")
+                                Text("Login")
+                        }
+                }else if(setting.viewName=="Register"){
+                    
+                    
+                }else if(setting.viewName=="Password"){
+                    
+                    
+                }
             }
         }
     }
@@ -42,6 +51,7 @@ struct ContentView: View {
 
 class AppSettings: ObservableObject{
     @Published var isLoggedIn = false;
+    @Published var viewName = "Login"
 }
 
 struct ContentView_Previews: PreviewProvider {
