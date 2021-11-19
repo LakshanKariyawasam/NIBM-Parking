@@ -58,7 +58,27 @@ struct LoginView: View {
             })
 
         }
-        .padding(50.0)
+        .padding(50.0).onAppear {
+            
+            self.getUserData()
+            
+        
+        }
+    }
+    
+    
+    func getUserData(){
+        let controller = FirebaseController()
+        controller.getUser() {(success) -> Void in
+           let regId = success["regid"] as! Int64;
+            if(regId==0){
+               setting.isLoggedIn = false
+            }else{
+                                
+               setting.isLoggedIn = true
+            }
+            
+        }
     }
 }
 

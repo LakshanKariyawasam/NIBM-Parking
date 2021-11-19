@@ -9,13 +9,18 @@ import SwiftUI
 import CodeScanner
 
 struct BookingView: View {
+    @State var regNo = "";
+    @State var vehiNo = "";
+    @State var userObj: [String: Any] = ["":""];
+    @State var time = "";
     
+    @State var selectedTime = 0
     @State var isPresentingScanner = false;
     @State var qrCode: String = "";
     @State var avaSolts: [String] = [];
-    @State private var avaSoltsIndex = 1;
-    @State var isLoggedIn = false;
+    @State private var avaSoltsIndex = 0;
     @ObservedObject var setting : AppSettings
+   
     
     var scannerSheet : some View{
         CodeScannerView(
@@ -44,14 +49,14 @@ struct BookingView: View {
                 }
                 
                 VStack(alignment: .leading){
-                    Text("135555")
+                    Text(regNo)
                         .fontWeight(.semibold)
-                    Text("BBC-4762")
+                    Text(vehiNo)
                         .fontWeight(.semibold)
                 }
                 
             }.shadow(radius: 10 )
-            .padding(.bottom, 20.0).foregroundColor(.black).background(Color(hue: 0.547, saturation: 0.34, brightness: 0.969)).cornerRadius(/*@START_MENU_TOKEN@*/8.0/*@END_MENU_TOKEN@*/)
+            .padding(.all, 20.0).foregroundColor(.black).background(Color(hue: 0.547, saturation: 0.34, brightness: 0.969)).cornerRadius(/*@START_MENU_TOKEN@*/8.0/*@END_MENU_TOKEN@*/)
             
             
             VStack{
@@ -77,17 +82,30 @@ struct BookingView: View {
             VStack{
                 Text("Select Time")
                 
-                    Picker(selection: .constant(1), label: Text("Picker")) {
-                        Text("30 Minutes").tag(1)
-                        Text("1 Hour").tag(2)
-                        Text("2 Hour").tag(3)
-                        Text("3 Hour").tag(4)
-                    }
-                    .frame(height: 100.0)
+                Picker("Picker",selection: $selectedTime, content:{
+                    Text("30 Minutes").tag(0)
+                    Text("1 Hour").tag(1)
+                    Text("2 Hour").tag(2)
+                    Text("3 Hour").tag(3)
+                }).frame(height: 100.0)
                 
-                Button("Book Now"){
-                    
-                }
+                Button(action:{
+                    self.getTime()
+                    let controller = FirebaseController()
+                    controller.booking(slotId: avaSolts[avaSoltsIndex], userObj: userObj, time: time) {(success) in
+                        if(success){
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                self.loadData();
+                            }
+                        }else{
+
+                        }
+
+                    }
+                }, label:{
+                    Text("Book Now").fontWeight(.semibold).foregroundColor(.white).padding().frame(width: 200.0, height: 30.0).background(Color(hue: 0.647, saturation: 1.0, brightness: 0.992)).cornerRadius(/*@START_MENU_TOKEN@*/8.0/*@END_MENU_TOKEN@*/)
+                })
+                
                 .padding(.top, 50.0)
             }
             
@@ -110,14 +128,11 @@ struct BookingView: View {
     }
     
     func loadData(){
+       // self.avaSolts = [];
         let controller = FirebaseController()
-        
         controller.getAvailableSlots() {(success) in
             self.avaSolts = success;
-            print(success)
         }
-        
-        
     }
     
     func getUserData(){
@@ -125,14 +140,41 @@ struct BookingView: View {
         controller.getUser() {(success) -> Void in
            let regId = success["regid"] as! Int64;
             if(regId==0){
-                print("not login")
-                setting.isLoggedIn = false
-                
+               setting.isLoggedIn = false
             }else{
-                setting.isLoggedIn = true
+                self.userObj = success
+                self.regNo = String(regId);
+                self.vehiNo = success["vehicleNo"] as! String
+                
+               setting.isLoggedIn = true
             }
             
         }
+    }
+    
+    
+    func getTime(){
+        var date = NSDate();
+        if(self.selectedTime == 0){
+            date = date.addingTimeInterval((TimeInterval(30.0 * 60.0)))
+        }else if(self.selectedTime == 1){
+            date = date.addingTimeInterval((TimeInterval(60.0 * 60.0)))
+        }else if(self.selectedTime == 2){
+            date = date.addingTimeInterval((TimeInterval(120.0 * 60.0)))
+        }else if(self.selectedTime == 3){
+            date = date.addingTimeInterval((TimeInterval(180.0 * 60.0)))
+        }else {
+            
+        }
+       
+        let calender = Calendar.current;
+        let hour = calender.component(.hour, from: date as Date)
+        let min = calender.component(.minute, from: date as Date)
+
+        time = "\(hour)"+":"+"\(min)"
+        
+        time = "\(String(format: "%02d", hour)):\(String(format: "%02d", min))"
+       
     }
 }
 

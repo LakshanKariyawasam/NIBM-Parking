@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var setting = AppSettings()    
-
+    @StateObject var setting = AppSettings()
+    
     var body: some View {
+        
         TabView {
             HomeView()
                 .tabItem {
@@ -25,13 +26,12 @@ struct ContentView: View {
                             Image(systemName: "book")
                             Text("Booking")
                     }
-                SettingsView().tabItem {
+                SettingsView(setting: setting).tabItem {
                         Image(systemName: "gear")
                         Text("Settings")
                     }
             }else{
                 if(setting.viewName=="Login"){
-                    
                     LoginView(setting: setting)
                             .tabItem {
                                 Image(systemName: "person")
@@ -45,7 +45,6 @@ struct ContentView: View {
                             }
                     
                 }else if(setting.viewName=="Password"){
-                    
                     ForgetPasswordView(setting: setting)
                             .tabItem {
                                 Image(systemName: "person")
@@ -53,6 +52,25 @@ struct ContentView: View {
                             }
                 }
             }
+        }.onAppear {
+         
+             //self.getUserData()
+             
+         
+         }
+    }
+    
+    func getUserData(){
+        let controller = FirebaseController()
+        controller.getUser() {(success) -> Void in
+           let regId = success["regid"] as! Int64;
+            if(regId==0){
+               setting.isLoggedIn = false
+            }else{
+                                
+               setting.isLoggedIn = true
+            }
+            
         }
     }
 }
@@ -62,8 +80,8 @@ class AppSettings: ObservableObject{
     @Published var viewName = "Login"
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

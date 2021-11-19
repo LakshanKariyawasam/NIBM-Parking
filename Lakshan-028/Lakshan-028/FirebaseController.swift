@@ -44,7 +44,6 @@ class FirebaseController{
     func getUser(completionBlock: @escaping (_ success: [String: Any]) -> Void) {
         var ref: DatabaseReference!
         ref = Database.database().reference()
-        print("mehe awsssa")
         guard let userID = Auth.auth().currentUser?.uid else {
             completionBlock(["regid" : 0 as Int64]);
             return
@@ -53,7 +52,7 @@ class FirebaseController{
         
         ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
                 
-            print("mehe awa")
+            
             let userObj = snapshot.value as! [String: Any]
             completionBlock(userObj);
         })
@@ -107,6 +106,16 @@ class FirebaseController{
         try! Auth.auth().signOut();
     }
     
+    func booking(slotId: String,userObj: Any,time: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        ref.child("datas").child(slotId).child("user").setValue(userObj)
+        ref.child("datas").child(slotId).child("dateTime").setValue(time)
+        let prntRef = ref.child("datas").child(slotId)
+        prntRef.updateChildValues(["status":"BOOKED"])
+        completionBlock(true)
+        
+    }
     
 
 }

@@ -78,9 +78,7 @@ struct SettingsView: View {
         controller.getUser() {(success) -> Void in
            let regId = success["regid"] as! Int64;
             if(regId==0){
-                print("not login")
-               setting.isLoggedIn = false
-                
+               setting.isLoggedIn = false                
             }else{
                 self.regNo = String(regId);
                 self.name = success["name"] as! String;
@@ -94,8 +92,8 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}
+//struct SettingsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsView()
+//    }
+//}
