@@ -3,15 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		092A24C42744AC96008DA14D /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A24C32744AC96008DA14D /* FirebaseController.swift */; };
-		092A24CA2744FAC1008DA14D /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 092A24C92744FAC1008DA14D /* CodeScanner */; };
-		092A24CF27451D4A008DA14D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A24CE27451D4A008DA14D /* LoginView.swift */; };
-		092FF30C2746590E00C725E9 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FF30B2746590E00C725E9 /* RegisterView.swift */; };
-		092FF3112746877400C725E9 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FF3102746877400C725E9 /* ForgetPasswordView.swift */; };
 		09362DA827423E710029E047 /* Lakshan_028App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09362DA727423E710029E047 /* Lakshan_028App.swift */; };
 		09362DAA27423E710029E047 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09362DA927423E710029E047 /* ContentView.swift */; };
 		09362DAC27423E8F0029E047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09362DAB27423E8F0029E047 /* Assets.xcassets */; };
@@ -49,9 +45,6 @@
 
 /* Begin PBXFileReference section */
 		092A24C32744AC96008DA14D /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
-		092A24CE27451D4A008DA14D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		092FF30B2746590E00C725E9 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		092FF3102746877400C725E9 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
 		09362DA427423E710029E047 /* Lakshan-028.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lakshan-028.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09362DA727423E710029E047 /* Lakshan_028App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lakshan_028App.swift; sourceTree = "<group>"; };
 		09362DA927423E710029E047 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				092A24CA2744FAC1008DA14D /* CodeScanner in Frameworks */,
 				B93C41B42BF09EEAECE15A9A /* Pods_Lakshan_028.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,9 +141,6 @@
 				094990442743B8990088690B /* SlotDTO.swift */,
 				094990492743BD7F0088690B /* SlotGridView.swift */,
 				092A24C32744AC96008DA14D /* FirebaseController.swift */,
-				092A24CE27451D4A008DA14D /* LoginView.swift */,
-				092FF30B2746590E00C725E9 /* RegisterView.swift */,
-				092FF3102746877400C725E9 /* ForgetPasswordView.swift */,
 			);
 			path = "Lakshan-028";
 			sourceTree = "<group>";
@@ -223,9 +212,6 @@
 			dependencies = (
 			);
 			name = "Lakshan-028";
-			packageProductDependencies = (
-				092A24C92744FAC1008DA14D /* CodeScanner */,
-			);
 			productName = "Lakshan-028";
 			productReference = 09362DA427423E710029E047 /* Lakshan-028.app */;
 			productType = "com.apple.product-type.application";
@@ -300,9 +286,6 @@
 				Base,
 			);
 			mainGroup = 09362D9B27423E700029E047;
-			packageReferences = (
-				092A24C82744FAC1008DA14D /* XCRemoteSwiftPackageReference "CodeScanner" */,
-			);
 			productRefGroup = 09362DA527423E710029E047 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -449,17 +432,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				092FF30C2746590E00C725E9 /* RegisterView.swift in Sources */,
 				092A24C42744AC96008DA14D /* FirebaseController.swift in Sources */,
 				0949904A2743BD7F0088690B /* SlotGridView.swift in Sources */,
 				0949903B2743A1980088690B /* SettingsView.swift in Sources */,
-				092FF3112746877400C725E9 /* ForgetPasswordView.swift in Sources */,
 				094990452743B8990088690B /* SlotDTO.swift in Sources */,
 				094990362743A1050088690B /* BookingView.swift in Sources */,
 				094990402743B09F0088690B /* CollectionCellView.swift in Sources */,
 				094990312743A0B40088690B /* HomeView.swift in Sources */,
 				09362DAA27423E710029E047 /* ContentView.swift in Sources */,
-				092A24CF27451D4A008DA14D /* LoginView.swift in Sources */,
 				09362DA827423E710029E047 /* Lakshan_028App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -786,25 +766,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		092A24C82744FAC1008DA14D /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/CodeScanner";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.7;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		092A24C92744FAC1008DA14D /* CodeScanner */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 092A24C82744FAC1008DA14D /* XCRemoteSwiftPackageReference "CodeScanner" */;
-			productName = CodeScanner;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09362D9C27423E700029E047 /* Project object */;
 }
