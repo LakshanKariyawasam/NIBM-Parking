@@ -3,16 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092A24C42744AC96008DA14D /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A24C32744AC96008DA14D /* FirebaseController.swift */; };
 		09362DA827423E710029E047 /* Lakshan_028App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09362DA727423E710029E047 /* Lakshan_028App.swift */; };
 		09362DAA27423E710029E047 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09362DA927423E710029E047 /* ContentView.swift */; };
 		09362DAC27423E8F0029E047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09362DAB27423E8F0029E047 /* Assets.xcassets */; };
 		09362DAF27423E8F0029E047 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09362DAE27423E8F0029E047 /* Preview Assets.xcassets */; };
 		09362DBA27423E910029E047 /* Lakshan_028Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09362DB927423E910029E047 /* Lakshan_028Tests.swift */; };
 		09362DC527423E910029E047 /* Lakshan_028UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09362DC427423E910029E047 /* Lakshan_028UITests.swift */; };
+		094990312743A0B40088690B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094990302743A0B40088690B /* HomeView.swift */; };
+		094990362743A1050088690B /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094990352743A1050088690B /* BookingView.swift */; };
+		0949903B2743A1980088690B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949903A2743A1980088690B /* SettingsView.swift */; };
+		094990402743B09F0088690B /* CollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949903F2743B09F0088690B /* CollectionCellView.swift */; };
+		094990452743B8990088690B /* SlotDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094990442743B8990088690B /* SlotDTO.swift */; };
+		0949904A2743BD7F0088690B /* SlotGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094990492743BD7F0088690B /* SlotGridView.swift */; };
+		0949904F2743D81C0088690B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0949904E2743D81C0088690B /* GoogleService-Info.plist */; };
+		B93C41B42BF09EEAECE15A9A /* Pods_Lakshan_028.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D698C33FD0B9E7CCD4B466 /* Pods_Lakshan_028.framework */; };
+		B9FF5D720031AAA5ABA6470A /* Pods_Lakshan_028_Lakshan_028UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09353FD45B79D686A1C10EA /* Pods_Lakshan_028_Lakshan_028UITests.framework */; };
+		F476B0EFC19F7837F1580AFF /* Pods_Lakshan_028Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A33DEF4785D9CD26FE5287 /* Pods_Lakshan_028Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		092A24C32744AC96008DA14D /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		09362DA427423E710029E047 /* Lakshan-028.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lakshan-028.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09362DA727423E710029E047 /* Lakshan_028App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lakshan_028App.swift; sourceTree = "<group>"; };
 		09362DA927423E710029E047 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +57,22 @@
 		09362DC027423E910029E047 /* Lakshan-028UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lakshan-028UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09362DC427423E910029E047 /* Lakshan_028UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lakshan_028UITests.swift; sourceTree = "<group>"; };
 		09362DC627423E910029E047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		094990302743A0B40088690B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		094990352743A1050088690B /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
+		0949903A2743A1980088690B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0949903F2743B09F0088690B /* CollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellView.swift; sourceTree = "<group>"; };
+		094990442743B8990088690B /* SlotDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotDTO.swift; sourceTree = "<group>"; };
+		094990492743BD7F0088690B /* SlotGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotGridView.swift; sourceTree = "<group>"; };
+		0949904E2743D81C0088690B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0DD99CEF4099D53736C3C27B /* Pods-Lakshan-028.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lakshan-028.release.xcconfig"; path = "Target Support Files/Pods-Lakshan-028/Pods-Lakshan-028.release.xcconfig"; sourceTree = "<group>"; };
+		5A373C5B7994F7CCA98A9386 /* Pods-Lakshan-028-Lakshan-028UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lakshan-028-Lakshan-028UITests.debug.xcconfig"; path = "Target Support Files/Pods-Lakshan-028-Lakshan-028UITests/Pods-Lakshan-028-Lakshan-028UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5ED6E9849A85F7BF82A2C34B /* Pods-Lakshan-028-Lakshan-028UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lakshan-028-Lakshan-028UITests.release.xcconfig"; path = "Target Support Files/Pods-Lakshan-028-Lakshan-028UITests/Pods-Lakshan-028-Lakshan-028UITests.release.xcconfig"; sourceTree = "<group>"; };
+		62192B5DF1584E2451799D7D /* Pods-Lakshan-028Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lakshan-028Tests.release.xcconfig"; path = "Target Support Files/Pods-Lakshan-028Tests/Pods-Lakshan-028Tests.release.xcconfig"; sourceTree = "<group>"; };
+		95D698C33FD0B9E7CCD4B466 /* Pods_Lakshan_028.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lakshan_028.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B063C19F1E55DEBB076F4F5F /* Pods-Lakshan-028Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lakshan-028Tests.debug.xcconfig"; path = "Target Support Files/Pods-Lakshan-028Tests/Pods-Lakshan-028Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B09353FD45B79D686A1C10EA /* Pods_Lakshan_028_Lakshan_028UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lakshan_028_Lakshan_028UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A33DEF4785D9CD26FE5287 /* Pods_Lakshan_028Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lakshan_028Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDEBB495476334D363DD180E /* Pods-Lakshan-028.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lakshan-028.debug.xcconfig"; path = "Target Support Files/Pods-Lakshan-028/Pods-Lakshan-028.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B93C41B42BF09EEAECE15A9A /* Pods_Lakshan_028.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F476B0EFC19F7837F1580AFF /* Pods_Lakshan_028Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9FF5D720031AAA5ABA6470A /* Pods_Lakshan_028_Lakshan_028UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +110,8 @@
 				09362DB827423E910029E047 /* Lakshan-028Tests */,
 				09362DC327423E910029E047 /* Lakshan-028UITests */,
 				09362DA527423E710029E047 /* Products */,
+				E41678BD1C03EA00D419C740 /* Pods */,
+				0AFBEB2E00080FA9BDEA67DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,11 +128,19 @@
 		09362DA627423E710029E047 /* Lakshan-028 */ = {
 			isa = PBXGroup;
 			children = (
+				0949904E2743D81C0088690B /* GoogleService-Info.plist */,
 				09362DA727423E710029E047 /* Lakshan_028App.swift */,
 				09362DA927423E710029E047 /* ContentView.swift */,
 				09362DAB27423E8F0029E047 /* Assets.xcassets */,
 				09362DB027423E8F0029E047 /* Info.plist */,
 				09362DAD27423E8F0029E047 /* Preview Content */,
+				094990302743A0B40088690B /* HomeView.swift */,
+				094990352743A1050088690B /* BookingView.swift */,
+				0949903A2743A1980088690B /* SettingsView.swift */,
+				0949903F2743B09F0088690B /* CollectionCellView.swift */,
+				094990442743B8990088690B /* SlotDTO.swift */,
+				094990492743BD7F0088690B /* SlotGridView.swift */,
+				092A24C32744AC96008DA14D /* FirebaseController.swift */,
 			);
 			path = "Lakshan-028";
 			sourceTree = "<group>";
@@ -130,6 +171,29 @@
 			path = "Lakshan-028UITests";
 			sourceTree = "<group>";
 		};
+		0AFBEB2E00080FA9BDEA67DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95D698C33FD0B9E7CCD4B466 /* Pods_Lakshan_028.framework */,
+				B09353FD45B79D686A1C10EA /* Pods_Lakshan_028_Lakshan_028UITests.framework */,
+				B1A33DEF4785D9CD26FE5287 /* Pods_Lakshan_028Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E41678BD1C03EA00D419C740 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDEBB495476334D363DD180E /* Pods-Lakshan-028.debug.xcconfig */,
+				0DD99CEF4099D53736C3C27B /* Pods-Lakshan-028.release.xcconfig */,
+				5A373C5B7994F7CCA98A9386 /* Pods-Lakshan-028-Lakshan-028UITests.debug.xcconfig */,
+				5ED6E9849A85F7BF82A2C34B /* Pods-Lakshan-028-Lakshan-028UITests.release.xcconfig */,
+				B063C19F1E55DEBB076F4F5F /* Pods-Lakshan-028Tests.debug.xcconfig */,
+				62192B5DF1584E2451799D7D /* Pods-Lakshan-028Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09362DC927423E910029E047 /* Build configuration list for PBXNativeTarget "Lakshan-028" */;
 			buildPhases = (
+				663FF51C0D9B3F2418829B58 /* [CP] Check Pods Manifest.lock */,
 				09362DA027423E710029E047 /* Sources */,
 				09362DA127423E710029E047 /* Frameworks */,
 				09362DA227423E710029E047 /* Resources */,
+				2984DB7BDD44889E13746275 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +220,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09362DCC27423E910029E047 /* Build configuration list for PBXNativeTarget "Lakshan-028Tests" */;
 			buildPhases = (
+				266D9C6D35ABCDE2221B71B3 /* [CP] Check Pods Manifest.lock */,
 				09362DB127423E910029E047 /* Sources */,
 				09362DB227423E910029E047 /* Frameworks */,
 				09362DB327423E910029E047 /* Resources */,
@@ -172,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09362DCF27423E910029E047 /* Build configuration list for PBXNativeTarget "Lakshan-028UITests" */;
 			buildPhases = (
+				990BC2B0DEB8BC1D246A92B3 /* [CP] Check Pods Manifest.lock */,
 				09362DBC27423E910029E047 /* Sources */,
 				09362DBD27423E910029E047 /* Frameworks */,
 				09362DBE27423E910029E047 /* Resources */,
+				4F45CD9CEDAC8C910647B8DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +304,7 @@
 			files = (
 				09362DAF27423E8F0029E047 /* Preview Assets.xcassets in Resources */,
 				09362DAC27423E8F0029E047 /* Assets.xcassets in Resources */,
+				0949904F2743D81C0088690B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,11 +324,121 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		266D9C6D35ABCDE2221B71B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lakshan-028Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2984DB7BDD44889E13746275 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lakshan-028/Pods-Lakshan-028-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lakshan-028/Pods-Lakshan-028-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lakshan-028/Pods-Lakshan-028-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F45CD9CEDAC8C910647B8DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lakshan-028-Lakshan-028UITests/Pods-Lakshan-028-Lakshan-028UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lakshan-028-Lakshan-028UITests/Pods-Lakshan-028-Lakshan-028UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lakshan-028-Lakshan-028UITests/Pods-Lakshan-028-Lakshan-028UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		663FF51C0D9B3F2418829B58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lakshan-028-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		990BC2B0DEB8BC1D246A92B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lakshan-028-Lakshan-028UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		09362DA027423E710029E047 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092A24C42744AC96008DA14D /* FirebaseController.swift in Sources */,
+				0949904A2743BD7F0088690B /* SlotGridView.swift in Sources */,
+				0949903B2743A1980088690B /* SettingsView.swift in Sources */,
+				094990452743B8990088690B /* SlotDTO.swift in Sources */,
+				094990362743A1050088690B /* BookingView.swift in Sources */,
+				094990402743B09F0088690B /* CollectionCellView.swift in Sources */,
+				094990312743A0B40088690B /* HomeView.swift in Sources */,
 				09362DAA27423E710029E047 /* ContentView.swift in Sources */,
 				09362DA827423E710029E047 /* Lakshan_028App.swift in Sources */,
 			);
@@ -414,12 +594,13 @@
 		};
 		09362DCA27423E910029E047 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDEBB495476334D363DD180E /* Pods-Lakshan-028.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Lakshan-028/Preview Content\"";
-				DEVELOPMENT_TEAM = N2THM4JP49;
+				DEVELOPMENT_TEAM = 592PGF39AA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Lakshan-028/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -436,12 +617,13 @@
 		};
 		09362DCB27423E910029E047 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DD99CEF4099D53736C3C27B /* Pods-Lakshan-028.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Lakshan-028/Preview Content\"";
-				DEVELOPMENT_TEAM = N2THM4JP49;
+				DEVELOPMENT_TEAM = 592PGF39AA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Lakshan-028/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -458,11 +640,12 @@
 		};
 		09362DCD27423E910029E047 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B063C19F1E55DEBB076F4F5F /* Pods-Lakshan-028Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2THM4JP49;
+				DEVELOPMENT_TEAM = 592PGF39AA;
 				INFOPLIST_FILE = "Lakshan-028Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,11 +663,12 @@
 		};
 		09362DCE27423E910029E047 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62192B5DF1584E2451799D7D /* Pods-Lakshan-028Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2THM4JP49;
+				DEVELOPMENT_TEAM = 592PGF39AA;
 				INFOPLIST_FILE = "Lakshan-028Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -502,10 +686,11 @@
 		};
 		09362DD027423E910029E047 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A373C5B7994F7CCA98A9386 /* Pods-Lakshan-028-Lakshan-028UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2THM4JP49;
+				DEVELOPMENT_TEAM = 592PGF39AA;
 				INFOPLIST_FILE = "Lakshan-028UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -522,10 +707,11 @@
 		};
 		09362DD127423E910029E047 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ED6E9849A85F7BF82A2C34B /* Pods-Lakshan-028-Lakshan-028UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2THM4JP49;
+				DEVELOPMENT_TEAM = 592PGF39AA;
 				INFOPLIST_FILE = "Lakshan-028UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -2,15 +2,31 @@
 //  ContentView.swift
 //  Lakshan-028
 //
-//  Created by Mobios on 11/15/21.
+//  Created by on 11/15/21.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+            BookingView()
+                .tabItem {
+                    Image(systemName: "book")
+                    Text("Booking")
+                }
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
+        }
     }
 }
 
