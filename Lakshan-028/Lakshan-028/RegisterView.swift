@@ -15,6 +15,7 @@ struct RegisterView: View {
     @State var nic = "" ;
     @State var vehiNo = "" ;
     @ObservedObject var setting : AppSettings
+    @State private var showingAlert = false
     let controller = FirebaseController()
     
     
@@ -48,6 +49,7 @@ struct RegisterView: View {
                   Button(action:{
                     controller.createUser(email: email, password: password, name: name, vehno: vehiNo, nic: nic) {(success) in
                         if(success){
+                            self.showingAlert = true;
                             setting.viewName = "Login"
                         }else{
                             
@@ -56,7 +58,9 @@ struct RegisterView: View {
                     }
                   }, label:{
                       Text("Register").font(.title).fontWeight(.semibold).foregroundColor(.white).padding().frame(width: 200.0, height: 50.0).background(Color(hue: 0.756, saturation: 1.0, brightness: 0.992)).cornerRadius(/*@START_MENU_TOKEN@*/8.0/*@END_MENU_TOKEN@*/)
-                  })
+                  }).alert(isPresented: self.$showingAlert) {
+                    Alert(title: Text("Succesfully Registered"))
+                  }
                   .padding(.top, 5.0)
                   
                   Button(action:{

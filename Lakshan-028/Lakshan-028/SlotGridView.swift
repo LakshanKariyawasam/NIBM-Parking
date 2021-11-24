@@ -13,10 +13,12 @@ struct SlotGridView : View {
     
     @Binding var data : [DataSnapshot]
     @Binding var Grid : [Int]
+    @State var reload = false
     
     var body: some View {
         VStack {
             if !self.Grid.isEmpty {
+                
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing : 15){
                         ForEach(self.Grid,id: \.self){i in
@@ -36,8 +38,38 @@ struct SlotGridView : View {
                         }
                     }
                     .padding()
-                }
+                }.gesture(
+                    DragGesture().onChanged { value in
+                       if value.translation.height > 0 {
+                          print("Scroll down")
+                        //self.reload = true;
+                        self.data = [];
+                        self.Grid = [];
+                        self.loadData();
+                       
+                       } else {
+                          print("Scroll up")
+                       }
+                    }
+                 )
+            }
+            
+            
+        }
+        
+    }
+    func loadData(){
+        let controller = FirebaseController()
+        
+        controller.getAllSlots() {(success) in
+            self.data = success;
+            for i in stride(from: 0, to: self.data.count, by: 2){
+               if i != self.data.count{
+                  self.Grid.append(i)
+               }
             }
         }
     }
+    
 }
+

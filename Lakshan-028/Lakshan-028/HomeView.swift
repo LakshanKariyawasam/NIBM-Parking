@@ -17,12 +17,23 @@ struct HomeView: View {
     var body: some View {
         VStack{
             SlotGridView(data: self.$data,Grid: self.$Grid)
-        }.onAppear {
-            if(!isLoaded){
-                self.loadData();
-                self.isLoaded = true;
-            }
+            
+            
         }
+        
+        .onAppear {
+            reloadData();
+
+        }
+        
+        
+    }
+    
+    func reloadData() {
+        self.data = [];
+        self.Grid = [];
+        self.loadData();
+        self.isLoaded = true;
     }
     
     
