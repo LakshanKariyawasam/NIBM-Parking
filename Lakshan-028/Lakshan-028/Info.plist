@@ -24,6 +24,12 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Need to Scan Qr Code</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need to Update Locatiopn</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Need to Update Locatiopn</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need to Update Locatiopn</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

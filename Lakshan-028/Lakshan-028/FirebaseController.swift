@@ -2,7 +2,7 @@
 //  FirebaseController.swift
 //  Lakshan-028
 //
-//  Created by Mobios on 11/17/21.
+//  Created by on 11/17/21.
 //
 
 import Foundation
@@ -67,6 +67,7 @@ class FirebaseController{
                 let userData = ["regid":id,
                                 "name":name,
                                 "vehicleNo":vehno,
+                                "isBlocked":false,
                                 "nic":nic] as [String : Any]
                 
                 var ref: DatabaseReference!
@@ -106,16 +107,39 @@ class FirebaseController{
         try! Auth.auth().signOut();
     }
     
-    func booking(slotId: String,userObj: Any,time: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+    func booking(slotId: String,userObj: Any,time: String, bookedTime: String, lon: Double,lati: Double, completionBlock: @escaping (_ success: Bool) -> Void) {
         var ref: DatabaseReference!
         ref = Database.database().reference()
         ref.child("datas").child(slotId).child("user").setValue(userObj)
         ref.child("datas").child(slotId).child("dateTime").setValue(time)
+        ref.child("datas").child(slotId).child("bookedTime").setValue(bookedTime)
+        ref.child("datas").child(slotId).child("lastLati").setValue(lati)
+        ref.child("datas").child(slotId).child("lastLong").setValue(lon)
         let prntRef = ref.child("datas").child(slotId)
         prntRef.updateChildValues(["status":"BOOKED"])
         completionBlock(true)
         
     }
     
-
+    func bookingUpdateLoc(slotId: String, lon: Double,lati: Double, completionBlock: @escaping (_ success: Bool) -> Void) {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        ref.child("datas").child(slotId).child("lastLati").setValue(lati)
+        ref.child("datas").child(slotId).child("lastLong").setValue(lon)
+        let prntRef = ref.child("datas").child(slotId)
+        prntRef.updateChildValues(["status":"BOOKED"])
+        completionBlock(true)
+    }
+    
+    func getNibmLocation(completionBlock: @escaping (_ success: [String: Any]) -> Void) {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+     
+        
+        ref.child("nibm").child("location").observeSingleEvent(of: .value, with: { (snapshot) in
+            let userObj = snapshot.value as! [String: Any]
+            completionBlock(userObj);
+        })
+    }
+    
 }

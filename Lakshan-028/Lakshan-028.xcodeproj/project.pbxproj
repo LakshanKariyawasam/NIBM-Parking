@@ -25,6 +25,7 @@
 		094990452743B8990088690B /* SlotDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094990442743B8990088690B /* SlotDTO.swift */; };
 		0949904A2743BD7F0088690B /* SlotGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094990492743BD7F0088690B /* SlotGridView.swift */; };
 		0949904F2743D81C0088690B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0949904E2743D81C0088690B /* GoogleService-Info.plist */; };
+		0986069A274EA58A00FA93DE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09860699274EA58A00FA93DE /* LocationManager.swift */; };
 		B93C41B42BF09EEAECE15A9A /* Pods_Lakshan_028.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D698C33FD0B9E7CCD4B466 /* Pods_Lakshan_028.framework */; };
 		B9FF5D720031AAA5ABA6470A /* Pods_Lakshan_028_Lakshan_028UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09353FD45B79D686A1C10EA /* Pods_Lakshan_028_Lakshan_028UITests.framework */; };
 		F476B0EFC19F7837F1580AFF /* Pods_Lakshan_028Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A33DEF4785D9CD26FE5287 /* Pods_Lakshan_028Tests.framework */; };
@@ -71,6 +72,7 @@
 		094990442743B8990088690B /* SlotDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotDTO.swift; sourceTree = "<group>"; };
 		094990492743BD7F0088690B /* SlotGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotGridView.swift; sourceTree = "<group>"; };
 		0949904E2743D81C0088690B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09860699274EA58A00FA93DE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		0DD99CEF4099D53736C3C27B /* Pods-Lakshan-028.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lakshan-028.release.xcconfig"; path = "Target Support Files/Pods-Lakshan-028/Pods-Lakshan-028.release.xcconfig"; sourceTree = "<group>"; };
 		5A373C5B7994F7CCA98A9386 /* Pods-Lakshan-028-Lakshan-028UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lakshan-028-Lakshan-028UITests.debug.xcconfig"; path = "Target Support Files/Pods-Lakshan-028-Lakshan-028UITests/Pods-Lakshan-028-Lakshan-028UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5ED6E9849A85F7BF82A2C34B /* Pods-Lakshan-028-Lakshan-028UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lakshan-028-Lakshan-028UITests.release.xcconfig"; path = "Target Support Files/Pods-Lakshan-028-Lakshan-028UITests/Pods-Lakshan-028-Lakshan-028UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				092A24CE27451D4A008DA14D /* LoginView.swift */,
 				092FF30B2746590E00C725E9 /* RegisterView.swift */,
 				092FF3102746877400C725E9 /* ForgetPasswordView.swift */,
+				09860699274EA58A00FA93DE /* LocationManager.swift */,
 			);
 			path = "Lakshan-028";
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				09362DAA27423E710029E047 /* ContentView.swift in Sources */,
 				092A24CF27451D4A008DA14D /* LoginView.swift in Sources */,
 				09362DA827423E710029E047 /* Lakshan_028App.swift in Sources */,
+				0986069A274EA58A00FA93DE /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
