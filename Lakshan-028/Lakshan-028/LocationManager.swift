@@ -16,8 +16,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var locationStatus: CLAuthorizationStatus?
     @Published var lastLocation: CLLocation?
     @Published var isNear = false;
-    @State var long: Double = 0.0;
-    @State var lati: Double = 0.0;
+    var long: Double = 0.0;
+    var lati: Double = 0.0;
     @AppStorage("slot") private var id: String?;
     
     override init() {
@@ -26,6 +26,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+        loadLocation()
     }
 
    
@@ -72,9 +73,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
         }
        
-        var nibm = CLLocation(latitude: lati, longitude: long)
+        var nibm = CLLocation(latitude: self.lati, longitude: self.long)
         var diffInMeter = nibm.distance(from: location)
         print(diffInMeter)
+        
         if(diffInMeter<=1000){
             isNear = true;
         }else{
