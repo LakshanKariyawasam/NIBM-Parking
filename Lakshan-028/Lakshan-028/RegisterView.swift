@@ -2,7 +2,7 @@
 //  RegisterView.swift
 //  Lakshan-028
 //
-//  Created by Mobios on 11/18/21.
+//  Created by on 11/18/21.
 //
 
 import SwiftUI
