@@ -75,7 +75,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         var nibm = CLLocation(latitude: lati, longitude: long)
         var diffInMeter = nibm.distance(from: location)
         print(diffInMeter)
-        if(diffInMeter>=1000){
+        if(diffInMeter<=1000){
             isNear = true;
         }else{
             isNear = false;
