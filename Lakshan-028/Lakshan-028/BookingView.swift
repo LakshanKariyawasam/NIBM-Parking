@@ -16,11 +16,12 @@ struct BookingView: View {
     
     @State var selectedTime = 0
     @State var isPresentingScanner = false;
+    @State var isDisbleBtn = true;
     @State var qrCode: String = "";
     @State var avaSolts: [String] = [];
     @State private var avaSoltsIndex = 0;
     @ObservedObject var setting : AppSettings
-   
+    @State private var showingAlert = false
     
     var scannerSheet : some View{
         CodeScannerView(
@@ -29,6 +30,12 @@ struct BookingView: View {
                 if case let .success(code) = res{
                     self.qrCode = code;
                     self.isPresentingScanner = false
+                    
+                    if let i = self.avaSolts.firstIndex(of:code) {
+                        self.avaSoltsIndex = i;
+                    } else {
+                        
+                    }
                 }
             }
         )
@@ -73,7 +80,7 @@ struct BookingView: View {
                     .frame(height: 100.0)
                     
                     Button("Scan QR"){
-                        self.isPresentingScanner = true;
+                       self.isPresentingScanner = true;
                     }.padding(5)
                 }
                 
@@ -90,22 +97,27 @@ struct BookingView: View {
                 }).frame(height: 100.0)
                 
                 Button(action:{
-                    self.getTime()
-                    let controller = FirebaseController()
-                    controller.booking(slotId: avaSolts[avaSoltsIndex], userObj: userObj, time: time) {(success) in
-                        if(success){
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                                self.loadData();
+                    
+                    if(!isDisbleBtn){
+                        isDisbleBtn = true;
+                        self.getTime()
+                        let controller = FirebaseController()
+                        controller.booking(slotId: avaSolts[avaSoltsIndex], userObj: userObj, time: time) {(success) in
+                            if(success){
+                                self.showingAlert = true;                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    self.loadData();
+                                }
+                            }else{
+
                             }
-                        }else{
 
-                        }
-
-                    }
+                        }                    }
+                    
                 }, label:{
                     Text("Book Now").fontWeight(.semibold).foregroundColor(.white).padding().frame(width: 200.0, height: 30.0).background(Color(hue: 0.647, saturation: 1.0, brightness: 0.992)).cornerRadius(/*@START_MENU_TOKEN@*/8.0/*@END_MENU_TOKEN@*/)
-                })
-                
+                }).disabled(isDisbleBtn).alert(isPresented: self.$showingAlert) {
+                    Alert(title: Text("Succesfully Booked"))
+                  }
                 .padding(.top, 50.0)
             }
             
@@ -132,6 +144,7 @@ struct BookingView: View {
         let controller = FirebaseController()
         controller.getAvailableSlots() {(success) in
             self.avaSolts = success;
+            isDisbleBtn = false;
         }
     }
     
