@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var setting = AppSettings()
+    @ObservedObject var setting = AppSettings()
     @State var selection = 1
+    
     
     var body: some View {
         
@@ -53,27 +54,12 @@ struct ContentView: View {
                             }.tag(1)
                 }
             }
-        }.onAppear {
-         
-             //self.getUserData()
-             
-         
-         }
+        }
+       
+        
     }
     
-    func getUserData(){
-        let controller = FirebaseController()
-        controller.getUser() {(success) -> Void in
-           let regId = success["regid"] as! Int64;
-            if(regId==0){
-               setting.isLoggedIn = false
-            }else{
-                                
-               setting.isLoggedIn = true
-            }
-            
-        }
-    }
+  
 }
 
 class AppSettings: ObservableObject{

@@ -13,21 +13,28 @@ struct LoginView: View {
     @ObservedObject var setting : AppSettings
     let controller = FirebaseController()
     
+    @State private var alert: Message?;
+    
     var body: some View {
         VStack(alignment: .center){
             Text("Email")
                 .font(.title)
-            TextField("",text: $email)
+            TextField("",text: $email).keyboardType(.emailAddress).accessibility(identifier: "email")
                 .frame(width: 250.0, height: 40.0).background(Color(.secondarySystemBackground))
             Text("Password")
                 .font(.title)
                 .padding(.top, 10.0)
-            SecureField("",text: $password)
+            SecureField("",text: $password).accessibility(identifier: "password")
                 .frame(width: 250.0, height: 40.0).background(Color(.secondarySystemBackground))
             
             Button(action:{
                 controller.signIn(email: email, pass: password) {(success) in
-                    setting.isLoggedIn = success
+                    
+                    if(success){
+                        setting.isLoggedIn = success
+                    }else{
+                        alert = Message(msg: "Invalid Credentials");
+                    }
                 }
                 
             }, label:{
@@ -39,7 +46,9 @@ struct LoginView: View {
                 setting.viewName = "Register"
             }, label:{
                 Text("Register").font(.title).fontWeight(.semibold).foregroundColor(.white).padding().frame(width: 200.0, height: 50.0).background(Color(hue: 0.647, saturation: 1.0, brightness: 0.992)).cornerRadius(/*@START_MENU_TOKEN@*/8.0/*@END_MENU_TOKEN@*/)
-            })
+            }).accessibility(identifier: "loginBtn").alert(item: $alert) { con in
+                Alert(title: Text(con.msg))
+            }
             .padding(.top, 30.0)
             
             

@@ -12,7 +12,9 @@
 		092A24CF27451D4A008DA14D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A24CE27451D4A008DA14D /* LoginView.swift */; };
 		092FF30C2746590E00C725E9 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FF30B2746590E00C725E9 /* RegisterView.swift */; };
 		092FF3112746877400C725E9 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FF3102746877400C725E9 /* ForgetPasswordView.swift */; };
-		09362DA827423E710029E047 /* Lakshan_028App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09362DA727423E710029E047 /* Lakshan_028App.swift */; };
+		0930994A275A991F007B68EF /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09309949275A991F007B68EF /* KeyboardGuardian.swift */; };
+		0932C857275A6ED500A3241A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0932C856275A6ED500A3241A /* SceneDelegate.swift */; };
+		0932C85C275A6F0900A3241A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0932C85B275A6F0900A3241A /* AppDelegate.swift */; };
 		09362DAA27423E710029E047 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09362DA927423E710029E047 /* ContentView.swift */; };
 		09362DAC27423E8F0029E047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09362DAB27423E8F0029E047 /* Assets.xcassets */; };
 		09362DAF27423E8F0029E047 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09362DAE27423E8F0029E047 /* Preview Assets.xcassets */; };
@@ -53,8 +55,10 @@
 		092A24CE27451D4A008DA14D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		092FF30B2746590E00C725E9 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		092FF3102746877400C725E9 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
+		09309949275A991F007B68EF /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
+		0932C856275A6ED500A3241A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0932C85B275A6F0900A3241A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09362DA427423E710029E047 /* Lakshan-028.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lakshan-028.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		09362DA727423E710029E047 /* Lakshan_028App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lakshan_028App.swift; sourceTree = "<group>"; };
 		09362DA927423E710029E047 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09362DAB27423E8F0029E047 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09362DAE27423E8F0029E047 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -139,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				0949904E2743D81C0088690B /* GoogleService-Info.plist */,
-				09362DA727423E710029E047 /* Lakshan_028App.swift */,
 				09362DA927423E710029E047 /* ContentView.swift */,
 				09362DAB27423E8F0029E047 /* Assets.xcassets */,
 				09362DB027423E8F0029E047 /* Info.plist */,
@@ -155,6 +158,9 @@
 				092FF30B2746590E00C725E9 /* RegisterView.swift */,
 				092FF3102746877400C725E9 /* ForgetPasswordView.swift */,
 				09860699274EA58A00FA93DE /* LocationManager.swift */,
+				0932C856275A6ED500A3241A /* SceneDelegate.swift */,
+				0932C85B275A6F0900A3241A /* AppDelegate.swift */,
+				09309949275A991F007B68EF /* KeyboardGuardian.swift */,
 			);
 			path = "Lakshan-028";
 			sourceTree = "<group>";
@@ -453,7 +459,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				092FF30C2746590E00C725E9 /* RegisterView.swift in Sources */,
+				0930994A275A991F007B68EF /* KeyboardGuardian.swift in Sources */,
+				0932C857275A6ED500A3241A /* SceneDelegate.swift in Sources */,
 				092A24C42744AC96008DA14D /* FirebaseController.swift in Sources */,
+				0932C85C275A6F0900A3241A /* AppDelegate.swift in Sources */,
 				0949904A2743BD7F0088690B /* SlotGridView.swift in Sources */,
 				0949903B2743A1980088690B /* SettingsView.swift in Sources */,
 				092FF3112746877400C725E9 /* ForgetPasswordView.swift in Sources */,
@@ -463,7 +472,6 @@
 				094990312743A0B40088690B /* HomeView.swift in Sources */,
 				09362DAA27423E710029E047 /* ContentView.swift in Sources */,
 				092A24CF27451D4A008DA14D /* LoginView.swift in Sources */,
-				09362DA827423E710029E047 /* Lakshan_028App.swift in Sources */,
 				0986069A274EA58A00FA93DE /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,7 +559,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -606,7 +614,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -627,7 +635,7 @@
 				DEVELOPMENT_TEAM = 592PGF39AA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Lakshan-028/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -650,7 +658,7 @@
 				DEVELOPMENT_TEAM = 592PGF39AA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Lakshan-028/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -22,13 +22,25 @@ class Lakshan_028UITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testLogin() throws {
         // UI tests must launch the application that they test.
+        
         let app = XCUIApplication()
         app.launch()
+        app.tabBars.buttons.element(boundBy: 1).tap();
+       
+        UIPasteboard.general.string = "testmail"
+        let mail = app.textFields["email"]
+        mail.press(forDuration: 1.1)
+        app.menuItems["Paste"].tap()
+        
+        UIPasteboard.general.string = "testpassword"
+        let pass = app.secureTextFields["password"]
+        pass.press(forDuration: 1.1)
+        app.menuItems["Paste"].tap()
+        
+        app.buttons["loginBtn"].tap();
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
     func testLaunchPerformance() throws {

@@ -14,7 +14,7 @@ struct SettingsView: View {
     @State var vehiNo = "" ;
     let controller = FirebaseController()
     @ObservedObject var setting : AppSettings
-    @StateObject var location = LocationManager();
+    @ObservedObject var location = LocationManager();
     
     var body: some View {
         VStack{

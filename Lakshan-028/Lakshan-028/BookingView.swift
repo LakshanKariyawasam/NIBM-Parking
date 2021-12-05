@@ -12,6 +12,7 @@ struct BookingView: View {
     @State var regNo = "";
     @State var vehiNo = "";
     @State var isBlocked = false;
+    @State var uType = "";
     @State var userObj: [String: Any] = ["":""];
     @State var time = "";
     @State var bookedTime = "";
@@ -26,8 +27,8 @@ struct BookingView: View {
     @State private var avaSoltsIndex = 0;
     @ObservedObject var setting : AppSettings
     
-    @StateObject var location = LocationManager();
-    @AppStorage("slot") private var id: String?;
+    @ObservedObject var location = LocationManager();
+    //@AppStorage("slot") private var id: String?;
     
     @State private var alert: Message?;
     
@@ -93,7 +94,7 @@ struct BookingView: View {
                                             
                               }
                         }
-                        .frame(height: 100.0)
+                        .frame(height: 150.0)
                         
                         Button("Scan QR"){
                            self.isPresentingScanner = true;
@@ -104,14 +105,17 @@ struct BookingView: View {
                 
                 VStack{
                     Text("Select Time")
-                    
-                    Picker("Picker",selection: $selectedTime, content:{
-                        Text("30 Minutes").tag(0)
-                        Text("1 Hour").tag(1)
-                        Text("2 Hour").tag(2)
-                        Text("3 Hour").tag(3)
-                    }).frame(height: 100.0)
-                    
+                    HStack(spacing: 0){
+                        Picker("Picker",selection: $selectedTime, content:{
+                            Text("30 Minutes").tag(0)
+                            Text("1 Hour").tag(1)
+                            Text("2 Hour").tag(2)
+                            Text("3 Hour").tag(3)
+                        }).frame(height: 30.0).pickerStyle(SegmentedPickerStyle())
+                        .scaledToFit().scaleEffect(CGSize(width: 1, height: 1))
+                        
+                    }
+            
                     Button(action:{
                         if(location.isNear){                            
                         
@@ -122,7 +126,8 @@ struct BookingView: View {
                                 isDisbleBtn = true;
                                 self.getTime()
                                 let controller = FirebaseController()
-                                id = avaSolts[avaSoltsIndex]
+                                //id = avaSolts[avaSoltsIndex]
+                                UserDefaults.standard.set(avaSolts[avaSoltsIndex], forKey: "slot")
                                 controller.booking(slotId: avaSolts[avaSoltsIndex], userObj: userObj, time: time, bookedTime: bookedTime,lon: (location.lastLocation?.coordinate.longitude)!,lati: (location.lastLocation?.coordinate.latitude)!) {(success) in
                                     if(success){
                                         
@@ -147,8 +152,8 @@ struct BookingView: View {
                     .alert(item: $alert) { con in
                         Alert(title: Text(con.msg))
                     }
-                    .padding(.top, 50.0)
-                }
+                    .padding(.top, 40.0)
+                }.padding(.top, 40.0)
                 
                 .sheet(isPresented: $isPresentingScanner) {
                     self.scannerSheet
@@ -171,9 +176,9 @@ struct BookingView: View {
 
     
     func loadData(){
-       // self.avaSolts = [];
+       
         let controller = FirebaseController()
-        controller.getAvailableSlots() {(success) in
+        controller.getAvailableSlots(type: uType) {(success) in
             self.avaSolts = success;
             isDisbleBtn = false;
         }
@@ -190,6 +195,7 @@ struct BookingView: View {
                 self.regNo = String(regId);
                 self.vehiNo = success["vehicleNo"] as! String
                 self.isBlocked = success["isBlocked"] as! Bool
+                self.uType = success["uType"] as! String
                 
                setting.isLoggedIn = true
             }

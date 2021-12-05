@@ -17,9 +17,9 @@ struct CollectionCellView: View {
         let status = self.data.childSnapshot(forPath: "status").value as! String;
         let slotName = self.data.childSnapshot(forPath: "name").value as! String;
         
-        let backColor = type == "VIP" ? Color.init(hexStringToUIColor(hex: "#FAE719").cgColor) : Color.init(hexStringToUIColor(hex: "#8766FF").cgColor);
-        let backBorderColor = type == "VIP" ? Color.init(hexStringToUIColor(hex: "#D9C700").cgColor) : Color.init(hexStringToUIColor(hex: "#0019D9").cgColor);
-        let textbackcolor = type == "VIP" ? Color.init(hexStringToUIColor(hex: "#E6B507").cgColor) : Color.init(hexStringToUIColor(hex: "#4138F2").cgColor);
+        let backColor = type == "VIP" ? Color("vipBackColor") : Color("norBackColor");
+        let backBorderColor = type == "VIP" ? Color("vipBorderColor") : Color("norBorderColor");
+        let textbackcolor = type == "VIP" ? Color("vipTextBackcolor") : Color("norTextBackcolor");
         
         let time = self.data.childSnapshot(forPath: "dateTime").value as! String;
         
@@ -47,28 +47,6 @@ struct CollectionCellView: View {
         .frame(width: 120.0,height: 120.0)
         .background( backColor)
         .overlay(RoundedRectangle(cornerRadius: 8).stroke(backBorderColor, lineWidth: 4)).shadow(radius: 10 )
-    }
-    
-    func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
-
-        if ((cString.count) != 6) {
-            return UIColor.gray
-        }
-
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
-
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
     }
     
     func timeDiff(fTime fromTime:String) -> String{

@@ -18,7 +18,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var isNear = false;
     var long: Double = 0.0;
     var lati: Double = 0.0;
-    @AppStorage("slot") private var id: String?;
+    //@AppStorage("slot") private var id: String?;
     
     override init() {
         super.init()
@@ -62,6 +62,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         lastLocation = location
         print(#function, location)
+        let id = UserDefaults.standard.string(forKey: "slot");
         if(id != nil){
             let controller = FirebaseController()
             controller.bookingUpdateLoc(slotId: id! ,lon: (location.coordinate.longitude),lati: (location.coordinate.latitude)) {(success) in

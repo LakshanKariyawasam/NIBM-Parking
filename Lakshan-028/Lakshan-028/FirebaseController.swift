@@ -24,7 +24,7 @@ class FirebaseController{
     }
     
     
-    func getAvailableSlots(completionBlock: @escaping (_ success: [String]) -> Void) {
+    func getAvailableSlots(type:String,completionBlock: @escaping (_ success: [String]) -> Void) {
         self.avaSlots = [];
         var ref: DatabaseReference!
         ref = Database.database().reference()
@@ -33,8 +33,18 @@ class FirebaseController{
 
         dataset.observe(.value, with:{ (snapshot) in
             for snap in snapshot.children {
-                //print((snap as! DataSnapshot).key)
-                self.avaSlots.append((snap as! DataSnapshot).key)
+                
+                if(type=="VIP"){
+                    self.avaSlots.append((snap as! DataSnapshot).key)
+                }else{
+                   let element = (snap as! DataSnapshot).value as! [String: Any]
+                    
+                    let sType = element["type"] as! String;
+                    if(sType=="NORMAL"){
+                        self.avaSlots.append((snap as! DataSnapshot).key)
+                    }
+                }
+                
             }
             //print(self.avaSlots)
             completionBlock(self.avaSlots);
@@ -51,15 +61,14 @@ class FirebaseController{
         }
         
         ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-                
-            
+                           
             let userObj = snapshot.value as! [String: Any]
             completionBlock(userObj);
         })
     }
     
     
-    func createUser(email: String, password: String,name:String,vehno:String,nic:String, completionBlock: @escaping (_ success: Bool) -> Void) {
+    func createUser(email: String, password: String,name:String,vehno:String,nic:String,type:String, completionBlock: @escaping (_ success: Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
             if let user = authResult?.user {
                 print(user)
@@ -68,6 +77,7 @@ class FirebaseController{
                                 "name":name,
                                 "vehicleNo":vehno,
                                 "isBlocked":false,
+                                "uType":type,
                                 "nic":nic] as [String : Any]
                 
                 var ref: DatabaseReference!
