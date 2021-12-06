@@ -12,7 +12,6 @@
 		092A24CF27451D4A008DA14D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A24CE27451D4A008DA14D /* LoginView.swift */; };
 		092FF30C2746590E00C725E9 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FF30B2746590E00C725E9 /* RegisterView.swift */; };
 		092FF3112746877400C725E9 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FF3102746877400C725E9 /* ForgetPasswordView.swift */; };
-		0930994A275A991F007B68EF /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09309949275A991F007B68EF /* KeyboardGuardian.swift */; };
 		0932C857275A6ED500A3241A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0932C856275A6ED500A3241A /* SceneDelegate.swift */; };
 		0932C85C275A6F0900A3241A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0932C85B275A6F0900A3241A /* AppDelegate.swift */; };
 		09362DAA27423E710029E047 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09362DA927423E710029E047 /* ContentView.swift */; };
@@ -55,7 +54,6 @@
 		092A24CE27451D4A008DA14D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		092FF30B2746590E00C725E9 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		092FF3102746877400C725E9 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
-		09309949275A991F007B68EF /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
 		0932C856275A6ED500A3241A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0932C85B275A6F0900A3241A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09362DA427423E710029E047 /* Lakshan-028.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lakshan-028.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +158,6 @@
 				09860699274EA58A00FA93DE /* LocationManager.swift */,
 				0932C856275A6ED500A3241A /* SceneDelegate.swift */,
 				0932C85B275A6F0900A3241A /* AppDelegate.swift */,
-				09309949275A991F007B68EF /* KeyboardGuardian.swift */,
 			);
 			path = "Lakshan-028";
 			sourceTree = "<group>";
@@ -459,7 +456,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				092FF30C2746590E00C725E9 /* RegisterView.swift in Sources */,
-				0930994A275A991F007B68EF /* KeyboardGuardian.swift in Sources */,
 				0932C857275A6ED500A3241A /* SceneDelegate.swift in Sources */,
 				092A24C42744AC96008DA14D /* FirebaseController.swift in Sources */,
 				0932C85C275A6F0900A3241A /* AppDelegate.swift in Sources */,

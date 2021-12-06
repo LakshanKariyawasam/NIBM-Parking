@@ -39,14 +39,14 @@ struct LoginView: View {
                 
             }, label:{
                 Text("Login").font(.title).fontWeight(.semibold).foregroundColor(.white).padding().frame(width: 200.0, height: 50.0).background(Color(hue: 0.756, saturation: 1.0, brightness: 0.992)).cornerRadius(/*@START_MENU_TOKEN@*/8.0/*@END_MENU_TOKEN@*/)
-            })
+            }).accessibility(identifier: "loginBtn")
             .padding(.top, 20.0)
             
             Button(action:{
                 setting.viewName = "Register"
             }, label:{
                 Text("Register").font(.title).fontWeight(.semibold).foregroundColor(.white).padding().frame(width: 200.0, height: 50.0).background(Color(hue: 0.647, saturation: 1.0, brightness: 0.992)).cornerRadius(/*@START_MENU_TOKEN@*/8.0/*@END_MENU_TOKEN@*/)
-            }).accessibility(identifier: "loginBtn").alert(item: $alert) { con in
+            }).alert(item: $alert) { con in
                 Alert(title: Text(con.msg))
             }
             .padding(.top, 30.0)
